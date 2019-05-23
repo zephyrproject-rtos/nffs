@@ -1,3 +1,4 @@
+if(CONFIG_FILE_SYSTEM_NFFS)
 add_library(NFFS INTERFACE)
 
 target_include_directories(NFFS INTERFACE include)
@@ -23,3 +24,4 @@ zephyr_library_sources(
     )
 zephyr_library_link_libraries(NFFS)
 target_link_libraries(NFFS INTERFACE zephyr_interface)
+endif()
