@@ -1,9 +1,10 @@
 if(CONFIG_FILE_SYSTEM_NFFS)
-add_library(NFFS INTERFACE)
 
-target_include_directories(NFFS INTERFACE include)
+add_library(${IMAGE}NFFS INTERFACE)
+target_include_directories(${IMAGE}NFFS INTERFACE include)
 
 zephyr_library()
+zephyr_library_link_libraries(${IMAGE}NFFS)
 zephyr_library_sources(
     src/nffs_area.c
     src/nffs_block.c
@@ -22,6 +23,5 @@ zephyr_library_sources(
     src/nffs_restore.c
     src/nffs_write.c
     )
-zephyr_library_link_libraries(NFFS)
-target_link_libraries(NFFS INTERFACE zephyr_interface)
+
 endif()
