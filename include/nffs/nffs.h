@@ -27,7 +27,7 @@
 
 #if __ZEPHYR__
 #include <zephyr/types.h>
-#include <stats.h>
+#include <stats/stats.h>
 #endif
 
 #ifdef __cplusplus
